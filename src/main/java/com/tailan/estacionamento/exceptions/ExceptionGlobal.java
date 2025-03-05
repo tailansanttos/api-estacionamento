@@ -12,5 +12,9 @@ public class ExceptionGlobal {
         return ResponseEntity.notFound().build();
     }
 
+    @ExceptionHandler(VeiculoNaoExisteException.class)
+    public ResponseEntity<String> veiculoNaoExisteException(VeiculoNaoExisteException ex) {
+        return ResponseEntity.notFound().build();
+    }
 
 }
