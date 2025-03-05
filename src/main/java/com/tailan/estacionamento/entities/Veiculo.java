@@ -3,6 +3,7 @@ package com.tailan.estacionamento.entities;
 import com.tailan.estacionamento.dtos.VeiculoDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 
 @Entity
@@ -20,7 +21,8 @@ public class Veiculo {
     private String cor;
     @NotBlank
     private String placa;
-    @NotBlank
+
+
     @Enumerated(EnumType.STRING)
     private VeiculoType tipo;
 
@@ -75,11 +77,11 @@ public class Veiculo {
         this.placa = placa;
     }
 
-    public @NotBlank VeiculoType getTipo() {
+    public VeiculoType getTipo() {
         return tipo;
     }
 
-    public void setTipo(@NotBlank VeiculoType tipo) {
+    public void setTipo( VeiculoType tipo) {
         this.tipo = tipo;
     }
 }
